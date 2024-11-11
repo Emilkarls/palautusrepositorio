@@ -14,9 +14,9 @@ def main():
         player = Player(player_dict)
         players.append(player)
 
-    print("Oliot:")
-
-    for player in filter(lambda p: p.nationality == "FIN", players):
+    print("Players from FIN")
+    fin = filter(lambda p: p.nationality == "FIN", players)
+    for player in sorted(fin, key = lambda p: p.goals + p.assists, reverse=True):
         print(player)
 
 
